@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/ivanyakovenko/CLionProjects/Assignment_1-Programmin
 
 build cmake_object_order_depends_target_Assignment_1_Programming_Paradigms: phony || CMakeFiles/Assignment_1_Programming_Paradigms.dir
 
-build CMakeFiles/Assignment_1_Programming_Paradigms.dir/main.c.o: C_COMPILER__Assignment_1_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_1-Programming_Paradigms/main.c || cmake_object_order_depends_target_Assignment_1_Programming_Paradigms
-  DEP_FILE = CMakeFiles/Assignment_1_Programming_Paradigms.dir/main.c.o.d
+build CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o: C_COMPILER__Assignment_1_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_1-Programming_Paradigms/Assignment_1/main.c || cmake_object_order_depends_target_Assignment_1_Programming_Paradigms
+  DEP_FILE = CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o.d
   FLAGS = -g -std=gnu2x -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Assignment_1_Programming_Paradigms.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment_1_Programming_Paradigms.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/Assignment_1_Programming_Paradigms.dir/main.c.o: C_COMPILER__As
 #############################################
 # Link the executable Assignment_1_Programming_Paradigms
 
-build Assignment_1_Programming_Paradigms: C_EXECUTABLE_LINKER__Assignment_1_Programming_Paradigms_Debug CMakeFiles/Assignment_1_Programming_Paradigms.dir/main.c.o
+build Assignment_1_Programming_Paradigms: C_EXECUTABLE_LINKER__Assignment_1_Programming_Paradigms_Debug CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/Assignment_1_Programming_Paradigms.dir
   POST_BUILD = :
