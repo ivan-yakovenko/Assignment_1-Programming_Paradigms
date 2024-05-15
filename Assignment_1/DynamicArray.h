@@ -15,7 +15,13 @@ void DynamicArrayDefault(struct DynamicArray* dynamicArray) {
     dynamicArray->capacity = 0;
     dynamicArray->data = malloc(dynamicArray->capacity * sizeof(char**));
     for(size_t i = 0; i <= dynamicArray->capacity; i++) {
-        dynamicArray->data[i] = malloc(dynamicArray->capacity * sizeof(char*));
+        dynamicArray->data[i] = (char**)malloc(dynamicArray->capacity * sizeof(char*));
+        for(size_t j = 0; j <= dynamicArray->capacity; j++) {
+            dynamicArray->data[i][j] = (char*)malloc(dynamicArray->capacity * sizeof(char));
+//            if(dynamicArray->data[i] = NULL) {
+//                return;
+//            }
+        }
     }
 }
 
@@ -23,9 +29,10 @@ size_t getCapacity(struct DynamicArray* dynamicArray) {
     return dynamicArray->capacity;
 }
 
-void Resize(struct DynamicArray* dynamicArray) {
+void Resize(struct DynamicArray* dynamicArray, int newValuesSize) {
 //    size_t oldCapacity = getCapacity(dynamicArray);
-    size_t newCapacity = getCapacity(dynamicArray) + 1;
+
+    size_t newCapacity = getCapacity(dynamicArray) + newValuesSize;
     char*** newData = (char***)realloc(dynamicArray->data, newCapacity * sizeof(char**));
 //    if (newData == NULL) {
 //        return;
@@ -34,16 +41,20 @@ void Resize(struct DynamicArray* dynamicArray) {
     dynamicArray->capacity = newCapacity;
     for(size_t i = getCapacity(dynamicArray); i < newCapacity; i++) {
         dynamicArray->data[i] = (char**)malloc(newCapacity * sizeof(char *));
-        if (dynamicArray->data[i] == NULL) {
-            return;
+        for(size_t j = getCapacity(dynamicArray); j < newCapacity; j++) {
+            dynamicArray->data[i][j] = (char*)malloc(newCapacity * sizeof(char));
+            if (dynamicArray->data[i][j] == NULL) {
+                return;
+            }
         }
     }
 
 }
 
-//void AddNewLine(struct DynamicArray* dynamicArray) {
-//    dynamicArray->rows++;
-//}
+void AddNewLine(struct DynamicArray* dynamicArray, int newValueSize) {
+    Resize(dynamicArray, newValueSize);
+    dynamicArray->rows++;
+}
 
 void PushBack(struct DynamicArray* dynamicArray, char* newValue) {
 //    if(dynamicArray->cols == dynamicArray->capacity) {
@@ -53,9 +64,13 @@ void PushBack(struct DynamicArray* dynamicArray, char* newValue) {
 //    size_t size = dynamicArray->rows*dynamicArray->cols;
 
 //    for(size_t i = 0; i < strlen(newValue) / dynamicArray->capacity; i++) {
-        Resize(dynamicArray);
-        dynamicArray->data[dynamicArray->rows][dynamicArray->cols] = newValue;
+//if(dynamicArray->cols == dynamicArray->capacity) {
+    for(size_t i = 0; i < strlen(newValue); i++) {
+        Resize(dynamicArray, 1);
+        dynamicArray->data[dynamicArray->rows][dynamicArray->cols] = &newValue[i];
         dynamicArray->cols++;
+    }
+
 
 //    Resize(dynamicArray, strlen(newValue));
 //    strcpy(dynamicArray->data, newValue);
@@ -75,7 +90,7 @@ void Print(struct DynamicArray* dynamicArray) {
 
     for (size_t i = 0; i <= dynamicArray->rows; i++) {
         for (size_t j = 0; j < dynamicArray->cols; j++) {
-            printf("%s", dynamicArray->data[i][j]);
+            printf("%c", *dynamicArray->data[i][j]);
         }
 
     }
