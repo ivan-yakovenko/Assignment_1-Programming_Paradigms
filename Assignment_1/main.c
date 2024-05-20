@@ -12,11 +12,12 @@ int main() {
 //    printf("Choose the command: \n");
 //    scanf("%d", &command);
 
-    PushBack(&dynamicArray, "Hello ");
-    //AddNewLine(&dynamicArray, sizeof(text));
-    PushBack(&dynamicArray, "BYE");
-
-    PushBack(&dynamicArray, " NO");
+    char* text = "Hi";
+    AddNewLine(&dynamicArray);
+    PushBack(&dynamicArray, text);
+    AddNewLine(&dynamicArray);
+    //PushBack(&dynamicArray, text);
+    PushBack(&dynamicArray, text);
     Print(&dynamicArray);
 
 //    switch (command) {
@@ -40,5 +41,5 @@ int main() {
 //    AddNewLine(&dynamicArray);
 //    PushBack(&dynamicArray, "Bye");
 
-
+   // return 0;
 }
