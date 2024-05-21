@@ -15,10 +15,10 @@ void DynamicArrayDefault(struct DynamicArray *dynamicArray) {
     dynamicArray->capacity = 0;
     dynamicArray->data = malloc(dynamicArray->capacity * sizeof(char *));
     for (size_t i = 0; i <= dynamicArray->capacity; i++) {
-        dynamicArray->data[i] = (char *) malloc(dynamicArray->capacity * sizeof(char ));
-            if(dynamicArray->data[i] == NULL) {
-                return;
-            }
+        dynamicArray->data[i] = (char *) malloc(dynamicArray->capacity * sizeof(char));
+        if (dynamicArray->data[i] == NULL) {
+            return;
+        }
     }
 }
 
@@ -68,7 +68,7 @@ void AddNewLine(struct DynamicArray *dynamicArray) {
 
 }
 
-void Insert(struct DynamicArray* dynamicArray, int line, int index, char *newValue) {
+void Insert(struct DynamicArray *dynamicArray, int line, int index, char *newValue) {
     if (line >= dynamicArray->rows) {
         printf("Out of range");
         return;
@@ -86,24 +86,37 @@ void Insert(struct DynamicArray* dynamicArray, int line, int index, char *newVal
                 length - index + 1);
     }
 
-        for (int k = 0; k < strlen(newValue); k++) {
-            dynamicArray->data[line][index + k] = newValue[k];
-            dynamicArray->cols += strlen(newValue);
-        }
-
+    for (int k = 0; k < strlen(newValue); k++) {
+        dynamicArray->data[line][index + k] = newValue[k];
+        dynamicArray->cols += strlen(newValue);
     }
 
+}
 
-    void Print(struct DynamicArray *dynamicArray) {
-        printf("2D Array:\n");
-
-        for (size_t i = 0; i <= dynamicArray->rows; i++) {
-            size_t j = 0;
-            while (dynamicArray->data[i][j] != '\0') {
-                printf("%c", dynamicArray->data[i][j]);
-                j++;
+void Search(struct DynamicArray *dynamicArray, char *text) {
+    size_t textLength = strlen(text);
+    for (size_t i = 0; i < dynamicArray->rows; i++) {
+        size_t rowLength = strlen(dynamicArray->data[i]);
+        for (size_t j = 0; j < rowLength; j++) {
+            if (strncmp(&dynamicArray->data[i][j], text, textLength) == 0) {
+                printf("%zu, %zu", i, j);
+                return;
             }
-            printf("\n");
-
         }
     }
+    printf("Text not found");
+}
+
+void Print(struct DynamicArray *dynamicArray) {
+    printf("2D Array:\n");
+
+    for (size_t i = 0; i <= dynamicArray->rows; i++) {
+        size_t j = 0;
+        while (dynamicArray->data[i][j] != '\0') {
+            printf("%c", dynamicArray->data[i][j]);
+            j++;
+        }
+        printf("\n");
+
+    }
+}

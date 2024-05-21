@@ -31,5 +31,6 @@ int main() {
     Insert(&dynamicArray, 3, 17, text6);
     Insert(&dynamicArray, 3, 19, text7);
     Print(&dynamicArray);
+    Search(&dynamicArray, "CHAN");
     return 0;
 }
