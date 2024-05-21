@@ -7,39 +7,29 @@ int main() {
     struct DynamicArray dynamicArray;
     DynamicArrayDefault(&dynamicArray);
 
-//    int command;
-//
-//    printf("Choose the command: \n");
-//    scanf("%d", &command);
+    char *text = "Hi";
+    char *text1 = "My name is Ivan";
+    char *text2 = "I am student of KE";
+    char *text3 = "Bye";
+    char *text4 = "Yours sincerely";
+    char *text5 = "Ivan";
+    char *text6 = "S";
+    char *text7 = " ITBA";
 
-    char* text = "Hi";
     AddNewLine(&dynamicArray);
     PushBack(&dynamicArray, text);
     AddNewLine(&dynamicArray);
-    //PushBack(&dynamicArray, text);
-    PushBack(&dynamicArray, text);
+    PushBack(&dynamicArray, text1);
+    AddNewLine(&dynamicArray);
+    PushBack(&dynamicArray, text2);
+    AddNewLine(&dynamicArray);
+    PushBack(&dynamicArray, text3);
+    AddNewLine(&dynamicArray);
+    PushBack(&dynamicArray, text4);
+    AddNewLine(&dynamicArray);
+    PushBack(&dynamicArray, text5);
+    Insert(&dynamicArray, 3, 17, text6);
+    Insert(&dynamicArray, 3, 19, text7);
     Print(&dynamicArray);
-
-//    switch (command) {
-//        case 1:
-//            printf("Enter text to append:");
-//            char* text;
-//            scanf("%s", text);
-//            PushBack(&dynamicArray, text);
-//            break;
-//        case 2:
-//            AddNewLine(&dynamicArray);
-//            printf("New line is started");
-//        case 5:
-//            Print(&dynamicArray);
-//        default:
-//            break;
-//    }
-
-//    PushBack(&dynamicArray, "Hi ");
-//    PushBack(&dynamicArray, "Me ");
-//    AddNewLine(&dynamicArray);
-//    PushBack(&dynamicArray, "Bye");
-
-   // return 0;
+    return 0;
 }
