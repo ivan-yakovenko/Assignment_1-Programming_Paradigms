@@ -68,7 +68,7 @@ void AddNewLine(struct DynamicArray *dynamicArray) {
 
 void Insert(struct DynamicArray *dynamicArray, int line, int index, char *newValue) {
     if (line > dynamicArray->rows) {
-        printf("Out of range, try another one");
+        printf("Out of range, try another one \n");
         return;
     }
 
