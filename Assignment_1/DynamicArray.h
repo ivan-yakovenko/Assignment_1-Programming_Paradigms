@@ -35,7 +35,7 @@ void Resize(struct DynamicArray *dynamicArray, size_t newValuesSize) {
     }
     dynamicArray->data = newData;
     for (size_t i = oldCapacity; i < newCapacity; i++) {
-        dynamicArray->data[i] = (char *) realloc(dynamicArray->data[i], newCapacity * sizeof(char));
+        dynamicArray->data[i] = (char *) malloc(newCapacity * sizeof(char));
         if (dynamicArray->data[i] == NULL) {
             return;
         }
@@ -50,7 +50,6 @@ void PushBack(struct DynamicArray *dynamicArray, char *newValue) {
     size_t newValueLength = strlen(newValue);
     Resize(dynamicArray, newValueLength);
 
-
     for (size_t i = 0; i < newValueLength; i++) {
         dynamicArray->data[dynamicArray->rows][dynamicArray->cols] = newValue[i];
         dynamicArray->cols++;
@@ -60,17 +59,16 @@ void PushBack(struct DynamicArray *dynamicArray, char *newValue) {
 
 void AddNewLine(struct DynamicArray *dynamicArray) {
     PushBack(dynamicArray, "\0");
-
-    Resize(dynamicArray, 1);
-
     dynamicArray->rows++;
     dynamicArray->cols = 0;
-
+    dynamicArray->data = realloc(dynamicArray->data, (dynamicArray->rows + 1) * sizeof(char *));
+    dynamicArray->data[dynamicArray->rows] = malloc(dynamicArray->capacity * sizeof(char));
+    dynamicArray->data[dynamicArray->rows][0] = '\0';
 }
 
 void Insert(struct DynamicArray *dynamicArray, int line, int index, char *newValue) {
-    if (line >= dynamicArray->rows) {
-        printf("Out of range");
+    if (line > dynamicArray->rows) {
+        printf("Out of range, try another one");
         return;
     }
 
@@ -90,25 +88,57 @@ void Insert(struct DynamicArray *dynamicArray, int line, int index, char *newVal
         dynamicArray->data[line][index + k] = newValue[k];
         dynamicArray->cols += strlen(newValue);
     }
-
 }
 
 void Search(struct DynamicArray *dynamicArray, char *text) {
     size_t textLength = strlen(text);
-    for (size_t i = 0; i < dynamicArray->rows; i++) {
+    int found;
+    for (size_t i = 0; i <= dynamicArray->rows; i++) {
         size_t rowLength = strlen(dynamicArray->data[i]);
         for (size_t j = 0; j < rowLength; j++) {
             if (strncmp(&dynamicArray->data[i][j], text, textLength) == 0) {
-                printf("%zu, %zu", i, j);
-                return;
+                printf("%zu, %zu\n", i, j);
+                found = 1;
             }
         }
     }
-    printf("Text not found");
+    if (found == 0) {
+        printf("Text not found");
+    }
+}
+
+void SaveInfo(struct DynamicArray *dynamicArray, char *filename) {
+    FILE *file = fopen(filename, "w");
+
+    for (size_t i = 0; i <= dynamicArray->rows; i++) {
+        size_t j = 0;
+        while (dynamicArray->data[i][j] != '\0') {
+            fputc(dynamicArray->data[i][j], file);
+            j++;
+        }
+        fputc('\n', file);
+    }
+    fclose(file);
+
+}
+
+void LoadInfo(struct DynamicArray *dynamicArray, char *filename) {
+    FILE *file = fopen(filename, "r");
+
+    char element;
+    while ((element = fgetc(file)) != EOF) {
+        if (element == '\n') {
+            AddNewLine(dynamicArray);
+        } else {
+            char str[2] = {element};
+            PushBack(dynamicArray, str);
+        }
+    }
+
+    fclose(file);
 }
 
 void Print(struct DynamicArray *dynamicArray) {
-    printf("2D Array:\n");
 
     for (size_t i = 0; i <= dynamicArray->rows; i++) {
         size_t j = 0;
