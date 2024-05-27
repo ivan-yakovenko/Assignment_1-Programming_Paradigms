@@ -86,8 +86,8 @@ void Insert(struct DynamicArray *dynamicArray, int line, int index, char *newVal
 
     for (int k = 0; k < strlen(newValue); k++) {
         dynamicArray->data[line][index + k] = newValue[k];
-        dynamicArray->cols += strlen(newValue);
     }
+    dynamicArray->cols += strlen(newValue);
 }
 
 void Search(struct DynamicArray *dynamicArray, char *text) {
