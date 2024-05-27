@@ -1,10 +1,8 @@
 # ninja log v5
-2	167	1716308237941969551	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o	4d86c2289bb7055e
-2	59	1716816088244955859	build.ninja	b8437c8e30c52fd4
-167	263	1716308238037501268	Assignment_1_Programming_Paradigms	a74ba7e6a1566b83
 2	46	1715367579539243077	CMakeFiles/Assignment_1_Programming_Paradigms.dir/main.c.o	2da402397f2f12bb
-9	58	1716816088244955859	build.ninja	b8437c8e30c52fd4
-0	211	1716816088459806263	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o	4d86c2289bb7055e
-211	331	1716816088578079238	Assignment_1_Programming_Paradigms	a74ba7e6a1566b83
-2	40	1716816107949610790	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o	4d86c2289bb7055e
 40	75	1716816107983825996	Assignment_1_Programming_Paradigms	a74ba7e6a1566b83
+9	58	1716816203461963470	build.ninja	b8437c8e30c52fd4
+2	40	1716816107949610790	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o	4d86c2289bb7055e
+2	46	1716816203461963470	build.ninja	b8437c8e30c52fd4
+1	32	1716816203497912207	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/DynamicArray.c.o	5dacce3889e45de7
+1	32	1716816203498334569	CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o	4d86c2289bb7055e
