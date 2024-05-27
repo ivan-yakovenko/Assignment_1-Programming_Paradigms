@@ -20,18 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8439712-6c84-4e71-a1d5-f02ae47d0189" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/DynamicArray.h" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_1/DynamicArray.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment_1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_1/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-05-11T13-54-58-0094.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_1_Programming_Paradigms" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_1_Programming_Paradigms" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_1_Programming_Paradigms.dir/Assignment_1/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-    </list>
+    <list default="true" id="a8439712-6c84-4e71-a1d5-f02ae47d0189" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,11 +83,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Assignment_1_Programming_Paradigms" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Assignment_1_Programming_Paradigms" TARGET_NAME="Assignment_1_Programming_Paradigms" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Assignment_1_Programming_Paradigms" RUN_TARGET_NAME="Assignment_1_Programming_Paradigms">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -130,6 +114,7 @@
       <workItem from="1716228182749" duration="4401000" />
       <workItem from="1716278349530" duration="1773000" />
       <workItem from="1716299643528" duration="4265000" />
+      <workItem from="1716816047401" duration="1000" />
     </task>
     <servers />
   </component>

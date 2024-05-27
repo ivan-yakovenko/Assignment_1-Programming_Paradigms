@@ -37,6 +37,7 @@ int main() {
                     printf("Invalid file name, try again with '.txt' \n");
                 }
                 SaveInfo(&dynamicArray, filename);
+                printf("Text has been saved successfully\n");
                 break;
             }
             case '4': {
@@ -50,6 +51,7 @@ int main() {
                     printf("Invalid file name, try again with '.txt' \n");
                 }
                 LoadInfo(&dynamicArray, filename);
+                printf("Text has been loaded successfully\n");
                 break;
             }
             case '5': {
